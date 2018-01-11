@@ -18,11 +18,15 @@ class DefaultController extends CommunecterController {
 
 	public function actionIndex() 
 	{
+    if( @Yii::app()->params["module"]["parent"] && !@Yii::app()->params["module"]["overwrite"][Yii::app()->controller->id][ Yii::app()->controller->action->id ] ){
+      $this->redirect(Yii::app()->createUrl( "/".Yii::app()->params["module"]["parent"]."/".Yii::app()->controller->id."/".Yii::app()->controller->action->id ));
+    }
+    
     	if(Yii::app()->request->isAjaxRequest)
-        echo $controller->renderPartial("index");
+        echo $this->renderPartial("index");
       else
       {
-        $this->layout = "//layouts/empty";
+        //$this->layout = "//layouts/empty";
         $this->render("index");
       }
   }

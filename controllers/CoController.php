@@ -18,7 +18,12 @@ class CoController extends CommunecterController {
   	public function actions()
 	{
 	    return array(
-	        'sample'  => 'citizenToolKit.controllers.co.SampleAction'
+	        'test'  => 'ressources.controllers.TestAction'
 	    );
 	}
+
+	public function actionIndex() 
+	{
+    	$this->redirect(Yii::app()->createUrl( "/".Yii::app()->params["module"]["parent"] ));	
+  	}
 }

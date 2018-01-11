@@ -1,6 +1,6 @@
 <?php
 /**
- * CO Tools Module
+ * Ressources Module
  *
  * @author Tibor Katelbach <oceatoon@mail.com>
  * @version 0.1
@@ -12,10 +12,10 @@ class RessourcesModule extends CWebModule {
 	private $_assetsUrl;
 
 	private $_version = "v0.1.0";
-	private $_versionDate = "07/01/2018";
-	private $_keywords = "learn, module,opensource,CO,communecter";
-	private $_description = "Learn how to use module for CO";
-	private $_pageTitle = "Learn modules & CO Systems";
+	private $_versionDate = "10/01/2018";
+	private $_keywords = "ressources, needs, services, competence, exchange, module,opensource,CO,communecter";
+	private $_description = "Ressource , Needs, Services, Competence module for CO";
+	private $_pageTitle = "Ressource modules & CO Systems";
 
 	public function getVersion(){return $this->_version;}
 	public function getVersionDate(){return $this->_versionDate;}
@@ -31,6 +31,10 @@ class RessourcesModule extends CWebModule {
 	    return $this->_assetsUrl;
 	}
 
+	public function getParentAssetsUrl()
+	{
+		return ( Yii::app()->params["module"]["parent"] ) ?  Yii::app()->getModule( Yii::app()->params["module"]["parent"] )->getAssetsUrl()  : $this->module->assetsUrl;
+	}
 	public function beforeControllerAction($controller, $action)
 	{
 		if (parent::beforeControllerAction($controller, $action))
@@ -67,7 +71,7 @@ class RessourcesModule extends CWebModule {
 
 		Yii::app()->params["module"] = array(
 			"parent" => "co2",
-			"overwriteList" => array(
+			"overwrite" => array(
 				"views" => array(),
 				"assets" => array(),
 				"controllers" => array(),

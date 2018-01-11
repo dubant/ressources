@@ -30,7 +30,7 @@ font-family: "Homestead";
     <br/>
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div style="text-align: center;">        
-    	<img id="logoERror" width=300 src="<?php echo $this->module->assetsUrl."/images/main-logo-home.png"?>" alt="Logo Pixel Humain"/>
+    	<img id="logoERror" width=300 src="<?php echo $this->module->assetsUrl."/images/main-logo-home.png"?>" alt="Logo Pixel Humain xxx"/>
     	<div id="error">
 
     		<div style="margin:30px 0 0 50px;text-align: center;">

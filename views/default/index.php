@@ -16,12 +16,10 @@ $cssAnsScriptFilesModule = array(
 );
 HtmlHelper::registerCssAndScriptsFiles($cssAnsScriptFilesModule, Yii::app()->getModule( Yii::app()->params["module"]["parent"] )->getAssetsUrl() );
 ?>
-
-
 <h1 style="">
 	<img height=50 src="<?php echo Yii::app()->getModule( Yii::app()->params["module"]["parent"] )->getAssetsUrl()?>/images/CO.png">
 	<img height=50 src="<?php echo $this->module->assetsUrl?>/images/logo.png">
-	Learn Module
+	<?php echo CHtml::encode( (isset($this->module->pageTitle))?$this->module->pageTitle:""); ?>
 </h1>
 
 <div id="doc"></div>
