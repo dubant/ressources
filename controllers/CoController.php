@@ -18,12 +18,13 @@ class CoController extends CommunecterController {
   	public function actions()
 	{
 	    return array(
-	        'test'  => 'ressources.controllers.TestAction'
+	        'test'  => 'ressources.controllers.actions.TestAction'
 	    );
 	}
 
 	public function actionIndex() 
 	{
-    	$this->redirect(Yii::app()->createUrl( "/".Yii::app()->params["module"]["parent"] ));	
+    	$this->render("index");
+    	//$this->redirect(Yii::app()->createUrl( "/".Yii::app()->params["module"]["parent"] ));	
   	}
 }
