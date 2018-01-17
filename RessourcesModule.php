@@ -33,7 +33,7 @@ class RessourcesModule extends CWebModule {
 
 	public function getParentAssetsUrl()
 	{
-		return ( Yii::app()->params["module"]["parent"] ) ?  Yii::app()->getModule( Yii::app()->params["module"]["parent"] )->getAssetsUrl()  : $this->module->assetsUrl;
+		return ( @Yii::app()->params["module"]["parent"] ) ?  Yii::app()->getModule( Yii::app()->params["module"]["parent"] )->getAssetsUrl()  : $this->module->assetsUrl;
 	}
 	public function beforeControllerAction($controller, $action)
 	{
@@ -70,6 +70,7 @@ class RessourcesModule extends CWebModule {
 			Yii::app()->language = (isset(Yii::app()->session["lang"])) ? Yii::app()->session["lang"] : 'fr';
 
 		Yii::app()->params["module"] = array(
+			"name" => self::getPageTitle(),
 			"parent" => "co2",
 			"overwrite" => array(
 				"views" => array(),

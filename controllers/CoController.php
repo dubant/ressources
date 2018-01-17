@@ -24,7 +24,10 @@ class CoController extends CommunecterController {
 
 	public function actionIndex() 
 	{
-    	$this->render("index");
+    	if(Yii::app()->request->isAjaxRequest)
+	        echo $this->renderPartial("../default/index");
+	    else
+    		$this->render("index");
     	//$this->redirect(Yii::app()->createUrl( "/".Yii::app()->params["module"]["parent"] ));	
   	}
 }
