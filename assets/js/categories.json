@@ -18,7 +18,7 @@
             "subFilters" : {
                 "charity" : {
                     "key": "charity",
-                    "label": "Time",
+                    "label": "Charity",
                     "icon" :"cook"
                 },
                 "education" : {
@@ -28,7 +28,7 @@
                 },
                 "househelp" : {
                     "key": "househelp",
-                    "label": "Education help",
+                    "label": "House help",
                     "icon" :"cook"
                 },
                 "washing" : {
@@ -42,28 +42,28 @@
                     "icon" :"cook"
                 },
                 "farming" : {
-                    "key": "gardening",
-                    "label": "Gardening",
+                    "key": "farming",
+                    "label": "Farming",
                     "icon" :"cook"
                 },
                 "generalmaintenance" : {
                     "key": "generalmaintenance",
-                    "label": "assistance",
+                    "label": "General Maintenance",
                     "icon" :"cook"
                 },
                 "animalcare" : {
                     "key": "animalcare",
-                    "label": "Education help",
+                    "label": "Animal care",
                     "icon" :"cook"
                 },
                 "ederlycare": {
-                    "key": "humancare",
-                    "label": "Education help",
+                    "key": "ederlycare",
+                    "label": "Ederly care",
                     "icon" :"cook"
                 },
                 "disabledcare": {
-                    "key": "humancare",
-                    "label": "Education help",
+                    "key": "disabledcare",
+                    "label": "Disabled care",
                     "icon" :"cook"
                 },
                 "hostinghelp": {
@@ -104,7 +104,7 @@
                 },
                 "agriculture" : {
                     "key": "agriculture",
-                    "label": "Education help",
+                    "label": "Agriculture",
                     "icon" :"cook"
                 },
                 "restauration" : {
@@ -113,8 +113,8 @@
                     "icon" :"cook"
                 },
                 "building" : {
-                    "key": "education",
-                    "label": "Education help",
+                    "key": "building",
+                    "label": "Building",
                     "icon" :"cook"
                 }
             }
