@@ -27,7 +27,8 @@ any  execution in /CO takes the design of the CO theme
 ## TODO 
 - move all files concerning ressources to the module 
     + ressource.js 
-    + ressource.json 
+    + ressource.json
+    + model 
 - [here](/ressources/co/form) open ressource dynform 
     + in CO
     + in module

@@ -18,7 +18,8 @@ class CoController extends CommunecterController {
   	public function actions()
 	{
 	    return array(
-	        'test'  => 'ressources.controllers.actions.TestAction'
+	        'test'  => 'ressources.controllers.actions.TestAction',
+	        'share'  => 'ressources.controllers.actions.ShareAction'
 	    );
 	}
 
