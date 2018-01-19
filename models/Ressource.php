@@ -3,6 +3,7 @@
 class Ressource {
 	const COLLECTION = "ressources";
 	const CONTROLLER = "ressource";
+	const MODULE = "ressources";
 	const TYPE_NEED = "needs";
 	const TYPE_OFFER = "offers";
 	//TODO Translate
@@ -62,12 +63,12 @@ class Ressource {
 	//used in initJs.php for the modules definition
 	public static function getConfig(){
 		return array(
-			"init"   => Yii::app()->getModule( "ressources" )->assetsUrl."/js/init.js" ,
-			"form"   => Yii::app()->getModule( "ressources" )->assetsUrl."/js/dynForm.js" ,
-            "categories" => CO2::getModuleContextList("ressources","categories"),
-            "col"    => Ressource::COLLECTION,
-            "ctrl"   => Ressource::CONTROLLER,
-
+			"collection"    => self::COLLECTION,
+            "controller"   => self::CONTROLLER,
+            "module"   => self::MODULE,
+			"init"   => Yii::app()->getModule( self::MODULE )->assetsUrl."/js/init.js" ,
+			"form"   => Yii::app()->getModule( self::MODULE )->assetsUrl."/js/dynForm.js" ,
+            "categories" => CO2::getModuleContextList(self::MODULE,"categories"),
 		);
 	}
 

@@ -28,8 +28,7 @@ HtmlHelper::registerCssAndScriptsFiles($cssAnsScriptFilesModule, Yii::app()->get
 <script type="text/javascript">
 
 $(document).ready(function() { 
-
-	getAjax('', baseUrl+'/ressources/default/doc',
+	getAjax('', baseUrl+'/<?php  echo $this->module->id;?>/default/doc',
 		function(data){ 
 			descHtml = dataHelper.markdownToHtml(data); 
 			$('#doc').html(descHtml);

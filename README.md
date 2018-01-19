@@ -25,21 +25,13 @@ any  execution in /CO takes the design of the CO theme
 - dyFObj.openForm('ressource')
 
 ## TODO 
-- move all files concerning ressources to the module 
-    + ressource.js 
-    + ressource.json
-    + model 
 - [here](/ressources/co/form) open ressource dynform 
     + in CO
     + in module
 - [here](/ressources/co/search) open a directory based on ressources
 - Get CO menu to show #mainNav
 - show dynform for declaring ressource
-- load dynamically by adding urls onload of the module urlCtrl.loadByHash('#ressources.co') must be added urlCtrl.loadableUrls
 
 ## Ideas, proposals; wishList
-- thinkpad of ideas
 
 ## BUGS, ACTIONS
-- bugs that need attention
-- actions that need to be executed 
