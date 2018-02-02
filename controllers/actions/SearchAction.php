@@ -1,5 +1,5 @@
 <?php
-class ShareAction extends CAction
+class SearchAction extends CAction
 {
     public function run()
     {

@@ -19,7 +19,7 @@ class CoController extends CommunecterController {
 	{
 	    return array(
 	        'test'  => 'ressources.controllers.actions.TestAction',
-	        'share'  => 'ressources.controllers.actions.ShareAction'
+	        'search'  => 'ressources.controllers.actions.SearchAction'
 	    );
 	}
 

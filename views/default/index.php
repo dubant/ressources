@@ -1,5 +1,6 @@
 <?php
 
+
 //assets from ph base repo
 $cssAnsScriptFilesTheme = array(
 	// SHOWDOWN
@@ -15,6 +16,11 @@ $cssAnsScriptFilesModule = array(
 	'/css/md.css',
 );
 HtmlHelper::registerCssAndScriptsFiles($cssAnsScriptFilesModule, Yii::app()->getModule( Yii::app()->params["module"]["parent"] )->getAssetsUrl() );
+
+if( $this->layout != "//layouts/empty"){
+	$layoutPath = 'webroot.themes.'.Yii::app()->theme->name.'.views.layouts.';
+	$this->renderPartial($layoutPath.'header',array("page"=>"ressource","layoutPath"=>$layoutPath));
+}
 ?>
 
 <h1 style="margin-top: 50px; text-align: center;padding:10px;">
@@ -30,10 +36,11 @@ HtmlHelper::registerCssAndScriptsFiles($cssAnsScriptFilesModule, Yii::app()->get
 $(document).ready(function() { 
 	getAjax('', baseUrl+'/<?php  echo $this->module->id;?>/default/doc',
 		function(data){ 
+			alert();
 			descHtml = dataHelper.markdownToHtml(data); 
 			$('#doc').html(descHtml);
+			initKInterface();
 		},"html");
-
 });
 
 </script>

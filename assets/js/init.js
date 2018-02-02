@@ -8,7 +8,7 @@ urlCtrl.loadableUrls[ "#ressource" ] = {
     open : true, 
     subdomain : "ressource", 
     subdomainName : "Ressources",
-    hash : "#ressources.co.share",
+    hash : "#ressources.co.search",
     icon : "cubes", 
     mainTitle : "Moteur de Ressource <span class='text-red'>territoriales</span>",
     placeholderMainSearch : "Rechercher un ressource ...",
