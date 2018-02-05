@@ -2,13 +2,13 @@
 CO.js
 ********************* */
 //var/www/dev/modules/co2/config/CO2/params.json:
-urlCtrl.loadableUrls[ "#ressource" ] = {
+urlCtrl.loadableUrls[ "#ressources" ] = {
 	inMenu : true, 
     useHeader : true, 
     open : true, 
     subdomain : "ressource", 
     subdomainName : "Ressources",
-    hash : "#ressources.co.search",
+    hash : "#ressources.co.ressources",
     icon : "cubes", 
     mainTitle : "Moteur de Ressource <span class='text-red'>territoriales</span>",
     placeholderMainSearch : "Rechercher un ressource ...",

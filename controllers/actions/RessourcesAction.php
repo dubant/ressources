@@ -1,5 +1,5 @@
 <?php
-class SearchAction extends CAction
+class RessourcesAction extends CAction
 {
     public function run()
     {

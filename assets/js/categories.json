@@ -7,7 +7,7 @@
        "service" : {
             "key": "service",
             "label": "Service",
-            "subFilters" : {
+            "subcat" : {
                 "charity" : {"key": "charity", "label": "Charity", "icon" :"cook"},
                 "education" : { "key": "education", "label": "Education help", "icon" :"cook"},
                 "househelp" : { "key": "househelp", "label": "House help", "icon" :"cook"},
@@ -22,7 +22,7 @@
             }
         },
         "competence" : {"key": "competence","label": "Competence",
-            "subFilters" : {
+            "subcat" : {
                 "artistic" : {"key": "artistic","label": "Artistic","icon" :"cook" },
                 "laws" : {"key": "laws","label": "Laws","icon" :"cook" },
                 "itdevlopment" : {"key": "itdevlopment","label": "IT devlopment","icon" :"cook" },
@@ -34,7 +34,7 @@
             }
         },
         "material" : {"key": "material","label": "Material",
-            "subFilters" : {
+            "subcat" : {
                 "electronic" : {"key": "electronic","label": "Electronic","icon" :"cook" },
                 "schoolfurniture" : {"key": "schoolfurniture","label": "School furniture","icon" :"cook" },
                 "meubles" : {"key": "meubles","label": "Meubles","icon" :"cook" },
