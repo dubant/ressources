@@ -1,12 +1,11 @@
 {
     "sections" : {
-        "need": { "label":"Call for ressource", "key" : "need", "icon" : "bullhorn"},
-        "offer": {"label":"Purpose a ressource","key" : "offer","icon" : "cubes"}
+        "need": { "label":"Need something", "labelFront" : "NEEDS", "key" : "need", "icon" : "bullhorn"},
+        "offer": {"label":"Offer something", "labelFront" : "OFFERS","key" : "offer","icon" : "cubes"}
     },
     "filters" : {
        "service" : {
-            "key": "service",
-            "label": "Service",
+            "key": "service","icon" : "cogs","label": "Service",
             "subcat" : {
                 "charity" : {"key": "charity", "label": "Charity", "icon" :"cook"},
                 "education" : { "key": "education", "label": "Education help", "icon" :"cook"},
@@ -21,7 +20,7 @@
                 "hostinghelp": {"key": "hostinghelp","label": "Hosting help","icon" :"cook" }
             }
         },
-        "competence" : {"key": "competence","label": "Competence",
+        "competence" : {"key": "competence","icon" : "bookmark","label": "Competence",
             "subcat" : {
                 "artistic" : {"key": "artistic","label": "Artistic","icon" :"cook" },
                 "laws" : {"key": "laws","label": "Laws","icon" :"cook" },
@@ -33,7 +32,7 @@
                 "building" : {"key": "building","label": "Building","icon" :"cook" }
             }
         },
-        "material" : {"key": "material","label": "Material",
+        "material" : {"key": "material","icon" : "wrench","label": "Material",
             "subcat" : {
                 "electronic" : {"key": "electronic","label": "Electronic","icon" :"cook" },
                 "schoolfurniture" : {"key": "schoolfurniture","label": "School furniture","icon" :"cook" },
