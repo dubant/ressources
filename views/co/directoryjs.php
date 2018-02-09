@@ -3,7 +3,7 @@
 #sectionMenu{height: 45px;background-color: #F4F4F6;;padding: 5px;text-align: center;border: 1px solid #bbb;}
 .btn-add{background-color: #2BB0C6;color:white;border: 1px solid #333; }
 </style>
-<div class="col-xs-12 center" id="sectionMenu">
+<div class="col-xs-12 center hidden" id="sectionMenu">
     <?php 
         $currentSection = 1;
         foreach ($categories["sections"] as $key => $section) { ?>
