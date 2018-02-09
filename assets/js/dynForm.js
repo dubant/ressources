@@ -136,7 +136,7 @@ dynForm = {
 	            		//$(".typeBtn:not(.active)").hide();
 	            		$("#ajaxFormModal #subtype").val("");
 	            		fieldHTML = "";
-	            		$.each(modules.ressources.categories.filters[ $(this).data('key') ]["subFilters"], function(k,v) { 
+	            		$.each(modules.ressources.categories.filters[ $(this).data('key') ]["subcat"], function(k,v) { 
 	            			fieldHTML += '<div class="col-md-6 padding-5">'+
         									'<a class="btn tagListEl subtypeBtn '+k+'Btn " data-tag="'+v.label+'" href="javascript:;">'+v.label+'</a>' +
 	            						"</div>";
