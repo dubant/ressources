@@ -1,7 +1,7 @@
 dynForm = {
     jsonSchema : {
-	    title : "Formulaire d'une ressource",
-	    icon : "map-marker",
+	    title : trad.addressource,
+	    icon : "cubes",
 	    type : "object",
 	    onLoads : {
 	    	//pour creer un subevnt depuis un event existant
@@ -72,14 +72,14 @@ dynForm = {
 	    properties : {
 	    	info : {
                 inputType : "custom",
-                html:"<p><i class='fa fa-info-circle'></i> Un Point d'interet est un élément assez libre qui peut etre géolocalisé ou pas, qui peut etre rataché à une organisation, un projet ou un évènement.</p>",
+                html:"<p><i class='fa fa-info-circle'></i> Entraide permet de déclarer des ressources dont on a besoins et/ ou que l'on offre.</p>",
             },
             breadcrumb : {
                 inputType : "custom",
                 html:"",
             },
             sectionBtn :{
-                label : "De quel type de ressource s'agit-il ?",
+                label : tradDynForm.whichRessourceType ,
 	            inputType : "tagList",
                 placeholder : "Choisir un type",
                 list : modules.ressources.categories.sections,
