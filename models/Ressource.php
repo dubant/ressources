@@ -6,6 +6,7 @@ class Ressource {
 	const MODULE = "ressources";
 	const TYPE_NEED = "needs";
 	const TYPE_OFFER = "offers";
+	
 	//TODO Translate
 	public static $category = array (
 		//"need"			=> "Besoin",
@@ -24,6 +25,7 @@ class Ressource {
 		//"geoJson" 		=> "Url au format geojson ou vers une umap",
 		//"video" 		=> "video"
 	);
+	
 	public static $subCategory = array(
 
 	);
