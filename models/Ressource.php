@@ -6,6 +6,7 @@ class Ressource {
 	const MODULE = "ressources";
 	const TYPE_NEED = "needs";
 	const TYPE_OFFER = "offers";
+	const ICON = "fa-cubes";
 	
 	//TODO Translate
 	public static $category = array (
