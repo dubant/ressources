@@ -24,15 +24,15 @@
   </button> 
 
   <?php 
-      $currentSection = 1;
-      foreach ($categories["sections"] as $key => $section) { ?>
-          <button class="btn btn-link bg-azure elipsis btn-select-type-anc" 
-                  data-type-anc="<?php echo @$section["label"]; ?>" data-key="<?php echo @$section["key"]; ?>" 
-                  data-type="ressources">
-            <i class="fa fa-<?php echo $section["icon"]; ?> hidden-xs"></i> 
-            <?php echo Yii::t("category", $section["labelFront"]); ?>
-          </button>
-  <?php } ?> 
+$currentSection = 1;
+foreach ($categories["sections"] as $key => $section) { ?>
+  <button class="btn btn-link bg-azure elipsis btn-select-type-anc" 
+          data-type-anc="<?php echo @$section["label"]; ?>" data-key="<?php echo @$section["key"]; ?>" 
+          data-type="ressources">
+    <i class="fa fa-<?php echo $section["icon"]; ?> hidden-xs"></i> 
+    <?php echo Yii::t("category", $section["labelFront"]); ?>
+  </button>
+<?php } ?> 
 
   <button class="btn margin-left-5 btn-link bg-green-k btn-add" onclick="dyFObj.openForm('ressources')">
     <i class="fa fa-plus"></i>
@@ -56,7 +56,7 @@
           
           ?>
           <button class="btn btn-default text-azure margin-bottom-5 margin-left-15 hidden keycat keycat-<?php echo $key; ?>" data-categ="<?php echo $key; ?>" data-keycat="<?php echo $lbl2; ?>">
-            <i class="fa fa-angle-right"></i> <?php echo Yii::t("category",$lbl2); ?>
+            <i class="fa fa-angle-right"></i> <?php echo Yii::t("category",$key2); ?>
           </button>
         <?php } ?>
       <?php } ?>

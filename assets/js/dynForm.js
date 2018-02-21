@@ -94,7 +94,7 @@ dynForm = {
 						//$(".sectionBtn:not(.active)").hide();
 						var sectionKey = $(this).data('key');
 						//alert(sectionKey);
-						var what = { title : tradDynForm["inwhichcategoryforclassified"]+" ?", 
+						var what = { title : tradDynForm.inwhichcategoryforclassified+" ?", 
 				                         icon : modules.ressources.categories.sections[sectionKey].icon }
 						if( jsonHelper.notNull( "modules.ressources.categories.sections."+sectionKey+".filters" ) ){
 				            //alert('build btns menu'+classified.sections[sectionKey].filters);
