@@ -2,7 +2,7 @@
 
 class Ressource {
 	const COLLECTION = "ressources";
-	const CONTROLLER = "ressource";
+	const CONTROLLER = "ressources";
 	const MODULE = "ressources";
 	const TYPE_NEED = "needs";
 	const TYPE_OFFER = "offers";

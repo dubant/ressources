@@ -44,7 +44,7 @@ dynForm = {
 		    }
 	    },
 	    beforeBuild : function(){
-	    	dyFObj.setMongoId('ressource', function(){
+	    	dyFObj.setMongoId('ressources', function(){
 	    		uploadObj.gotoUrl = (contextData != null && contextData.type && contextData.id ) ? "#page.type."+contextData.type+".id."+contextData.id+".view.directory.dir.ressources" : location.hash;
 	    	});
 	    },

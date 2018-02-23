@@ -22,7 +22,7 @@ urlCtrl.loadableUrls["#ressources.co"] = {title:'RESSOURCES', icon : 'puzzle-pie
 urlCtrl.loadableUrls["#rsc"] = {"alias":"#ressources"};
 
 //co.js object types
-typeObj.ressource = {  col:"ressources",ctrl:"ressource",color:"vine", icon:"cube", titleClass : "bg-vine", bgClass : "bgPerson"};
+typeObj.ressource = {  col:"ressources",ctrl:"ressources",color:"vine", icon:"cube", titleClass : "bg-vine", bgClass : "bgPerson"};
 typeObj.ressources = { sameAs:"ressource" };
 
 //CO LANG
