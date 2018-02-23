@@ -116,9 +116,9 @@ dynForm = {
             },
             section : dyFInputs.inputHidden(),
 	        typeBtn :{
-                label : "Type of ressource ? ",
+                label : tradCategory["Type of ressource"],
 	            inputType : "tagList",
-                placeholder : "Choose a category",
+                placeholder : tradCategory["Choose a category"],
                 list : modules.ressources.categories.filters,
                 init : function(){
 	            	$(".typeBtn").off().on("click",function()
@@ -128,7 +128,13 @@ dynForm = {
 	            		$( "."+$(this).data('key')+"Btn" ).toggleClass("active btn-dark-blue text-white");
 	            		$("#ajaxFormModal #type").val( ( $(this).hasClass('active') ) ? $(this).data('tag') : "" );
 	            		
-	            		$(".breadcrumbcustom").html( "<h4><a href='javascript:;'' class='btn btn-xs btn-danger'  onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'><i class='fa fa-times'></i></a>  "+$(".sectionBtn.active").data('tag')+" > "+$(".typeBtn.active").data('tag')+"</h4>" );
+	            		$(".breadcrumbcustom").html( 
+	            			"<h4><a href='javascript:;'' class='btn btn-xs btn-danger' "+
+	            					"onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'>"+
+	            					"<i class='fa fa-times'></i></a> "+
+	            					$(".sectionBtn.active").data('tag')+" > "+
+	            					$(".typeBtn.active").data('tag')+
+	            			"</h4>" );
 	            		$(".typeBtntagList").hide();
 
 	            		//$(".typeBtn:not(.active)").hide();
@@ -136,24 +142,32 @@ dynForm = {
 	            		fieldHTML = "";
 	            		$.each(modules.ressources.categories.filters[ $(this).data('key') ]["subcat"], function(k,v) { 
 	            			fieldHTML += '<div class="col-md-6 padding-5">'+
-        									'<a class="btn tagListEl subtypeBtn '+k+'Btn " data-tag="'+v.label+'" href="javascript:;">'+v.label+'</a>' +
+        									'<a class="btn tagListEl subtypeBtn '+k+'Btn " data-tag="'+v.key+'" data-lbl="'+tradCategory[v.key]+'" href="javascript:;">'+tradCategory[v.key]+'</a>' +
 	            						"</div>";
 	            		});
 	            		$(".subtypeSection").html('<hr class="col-md-12 no-padding">'+
 	            								  '<label class="col-md-12 text-left control-label no-padding" for="typeBtn">'+
-	            								  	'<i class="fa fa-chevron-down"></i> Sous-catégorie'+
+	            								  	'<i class="fa fa-chevron-down"></i> ' + tradCategory["Sub category"] +
 	            								  '</label>' +
 	            								  fieldHTML );
 
-	            		$(".subtypeBtn").off().on("click",function()
-		            	{
+	            		$(".subtypeBtn").off().on("click",function(){
 		            		$( ".subtypeBtn" ).removeClass("active");
 		            		$(this).addClass("active");
-		            		$("#ajaxFormModal #subtype").val( ( $(this).hasClass('active') ) ? $(this).data('tag') : "" );
+		            		var subtype = ( $(this).hasClass('active') ) ? $(this).data('tag') : "";
+		            		subtype = subtype != "" ? tradCategory[subtype] : "";
+		            		$("#ajaxFormModal #subtype").val( subtype );
 		            		$(".nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags").show();
 		            		//$(".subtypeBtn:not(.active)").hide();
 
-		            		$(".breadcrumbcustom").html( "<h4><a href='javascript:;'' class='btn btn-xs btn-danger'  onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'><i class='fa fa-times'></i></a> "+$(".sectionBtn.active").data('tag')+" > "+$(".typeBtn.active").data('tag')+" > "+$(".subtypeBtn.active").data('tag')+"</h4>" );
+		            		$(".breadcrumbcustom").html( "<h4><a href='javascript:;'' class='btn btn-xs btn-danger' "+
+		            											"onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'>"+
+		            											"<i class='fa fa-times'></i>"+
+		            										  "</a> "+
+		            										  $(".sectionBtn.active").data('tag')+" > "+
+		            										  $(".typeBtn.active").data('tag')	 +" > "+
+		            										  $(".subtypeBtn.active").data('lbl')+
+		            									 "</h4>");
 		            		$(".subtypeSectioncustom").hide();
 						});
 	            	});

@@ -12,6 +12,8 @@
 
 #sub-menu-left.subsub .btn{
   text-align: left !important;
+  text-transform: uppercase;
+  font-size:12px;
 }
 </style>
 
@@ -42,21 +44,23 @@ foreach ($categories["sections"] as $key => $section) { ?>
 
 <div class="col-xs-12"><hr class="col-xs-12 col-sm-10 col-md-10"></div>
 
-<div class="col-lg-2 col-md-2 col-sm-3 col-xs-8 margin-top-15 text-right subsub classifiedFilters" id="sub-menu-left">
+<div class="col-lg-2 col-md-2 col-sm-3 col-xs-8 margin-top-15 text-right subsub classifiedFilters font-montserrat" id="sub-menu-left">
   <button class="open-type-filter tooltips" data-toggle="tooltip" data-placement="right" data-title="<?php echo Yii::t("common","Open filtering by type") ?>"><i class="fa fa-chevron-right"></i></button>
   <?php 
       foreach ($categories['filters'] as $key => $cat) {
   ?>
       <?php if(is_array($cat)) { ?>
-        <button class="btn btn-default text-dark margin-bottom-5 btn-select-category-1" style="margin-left:-5px;" data-keycat="<?php echo $key; ?>">
-          <i class="fa fa-<?php echo @$cat["icon"]; ?> hidden-xs"></i> <?php echo Yii::t("category",$key); ?>
+        <button class="btn btn-default text-dark margin-bottom-5 btn-select-category-1" 
+                style="margin-left:-5px;" data-keycat="<?php echo $key; ?>">
+                <i class="fa fa-<?php echo @$cat["icon"]; ?> hidden-xs"></i> <?php echo Yii::t("category",$key); ?>
         </button><br>
+        
         <?php foreach (@$cat["subcat"] as $key2 => $cat2) { 
-          $lbl2 = (isset($cat2["label"])) ? $cat2["label"] : $cat2 ;
-          
-          ?>
-          <button class="btn btn-default text-azure margin-bottom-5 margin-left-15 hidden keycat keycat-<?php echo $key; ?>" data-categ="<?php echo $key; ?>" data-keycat="<?php echo $lbl2; ?>">
-            <i class="fa fa-angle-right"></i> <?php echo Yii::t("category",$key2); ?>
+                $lbl2 = (isset($cat2["label"])) ? $cat2["label"] : $cat2 ;
+        ?>
+          <button class="btn btn-default text-azure margin-bottom-5 margin-left-15 hidden keycat keycat-<?php echo $key; ?>"
+                  data-categ="<?php echo $key; ?>" data-keycat="<?php echo $lbl2; ?>">
+                  <i class="fa fa-angle-right"></i> <?php echo Yii::t("category",$key2); ?>
           </button>
         <?php } ?>
       <?php } ?>
