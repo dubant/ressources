@@ -6,45 +6,51 @@
   /*background-color: #F4F4F6;*/
   padding: 10px;
   /*border: 1px solid #bbb;*/
-  margin:15px 0 15px 10px;
 }
-.btn-add{}
-
+.btn-add, .btn-select-type-anc{
+  border-radius: 5px;
+}
+.btn-select-type-anc{
+  text-transform: uppercase;
+}
+.btn-select-type-anc, .btn-select-type-anc:hover, .btn-select-type-anc:active{
+  border-color: transparent;
+}
 #sub-menu-left.subsub .btn{
-  text-align: left !important;
   text-transform: uppercase;
   font-size:12px;
 }
 </style>
 
-<div class="col-xs-12 col-sm-10 col-md-10" id="sectionMenu">
-
-  <button class="btn btn-link bg-white text-azure margin-left-5 btn-default btn-select-type-anc letter-<?php echo @$section["color"]; ?>" 
+<div class="col-xs-12 col-sm-12 col-md-12" id="sectionMenu">
+  <div class="col-md-2 col-sm-3">
+   
+  <button class="btn bg-white text-dark margin-left-5 margin-top-5 btn-select-type-anc letter-<?php echo @$section["color"]; ?> pull-right" 
           data-type="ressources" data-type-anc=""  data-key="all">
-    <i class="fa fa-circle-o"></i>
+    <i class="fa fa-refresh"></i>
     <span class="hidden-xs hidden-sm"> <?php echo Yii::t("common","Show all"); ?> </span>
-  </button> 
-
+  </button>
+  </div>
+  <div class="col-md-10 col-sm-9">
   <?php 
 $currentSection = 1;
 foreach ($categories["sections"] as $key => $section) { ?>
-  <button class="btn btn-link bg-azure elipsis btn-select-type-anc" 
-          data-type-anc="<?php echo @$section["label"]; ?>" data-key="<?php echo @$section["key"]; ?>" 
-          data-type="ressources">
-    <i class="fa fa-<?php echo $section["icon"]; ?> hidden-xs"></i> 
-    <?php echo Yii::t("category", $section["labelFront"]); ?>
-  </button>
+
+    <div class="col-md-2 col-sm-4 col-xs-6 no-padding">
+      <button class="btn btn-default col-md-12 col-sm-12 padding-10 bold text-dark elipsis btn-select-type-anc" 
+            data-type-anc="<?php echo @$section["label"]; ?>" data-key="<?php echo @$section["key"]; ?>" 
+            data-type="ressources">
+      <i class="fa fa-<?php echo $section["icon"]; ?> hidden-xs"></i> 
+      <?php echo Yii::t("category", $section["labelFront"]); ?>
+    </button>
+  </div>
 <?php } ?> 
-
-  <button class="btn margin-left-5 btn-link bg-green-k btn-add" onclick="dyFObj.openForm('ressources')">
-    <i class="fa fa-plus"></i>
-    <span class="hidden-xs hidden-sm"> <?php echo Yii::t("common","Add"); ?> </span>
-  </button> 
+ 
+  </div>
 </div>
-
-<div class="col-xs-12"><hr class="col-xs-12 col-sm-10 col-md-10"></div>
-
-<div class="col-lg-2 col-md-2 col-sm-3 col-xs-8 margin-top-15 text-right subsub classifiedFilters font-montserrat" id="sub-menu-left">
+<div class="col-xs-12 no-padding"><hr class="no-margin"></div>
+<div class="no-padding col-md-10 col-sm-9 col-xs-12 text-left pull-right headerSearchContainer"></div>
+<div class="col-md-2 col-sm-3 col-xs-8 margin-top-15 text-right subsub classifiedFilters font-montserrat" id="sub-menu-left">
   <button class="open-type-filter tooltips" data-toggle="tooltip" data-placement="right" data-title="<?php echo Yii::t("common","Open filtering by type") ?>"><i class="fa fa-chevron-right"></i></button>
   <?php 
       foreach ($categories['filters'] as $key => $cat) {

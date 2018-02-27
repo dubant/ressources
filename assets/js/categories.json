@@ -1,7 +1,7 @@
 {
     "sections" : {
-        "need": { "label":"Need something", "labelFront" : "They need something", "key" : "need", "icon" : "angle-double-down"},
-        "offer": {"label":"Offer something", "labelFront" : "They offer something","key" : "offer","icon" : "angle-double-up"}
+        "need": { "label":"Need something", "labelFront" : "Needs", "key" : "need", "icon" : "angle-double-down"},
+        "offer": {"label":"Offer something", "labelFront" : "Offers","key" : "offer","icon" : "angle-double-up"}
     },
     "filters" : {
        "service" : {
