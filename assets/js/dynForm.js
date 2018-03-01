@@ -1,6 +1,6 @@
 dynForm = {
     jsonSchema : {
-	    title : trad.addressource,
+	    title : trad.addressources,
 	    icon : "cubes",
 	    type : "object",
 	    onLoads : {
