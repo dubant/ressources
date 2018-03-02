@@ -1,6 +1,6 @@
 dynForm = {
     jsonSchema : {
-	    title : trad.addressource,
+	    title : trad.addressources,
 	    icon : "cubes",
 	    type : "object",
 	    onLoads : {
@@ -17,23 +17,24 @@ dynForm = {
 	    		} else
 	    			$(".typeBtntagList, .nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags, #btn-submit-form").hide();
 
-	    		if(contextData.type && contextData.id )
+	    		if(contextData != null && contextData.type && contextData.id )
 	    		{
     				$('#ajaxFormModal #parentId').val(contextData.id);
 	    			$("#ajaxFormModal #parentType").val( contextData.type ); 
 	    		}	
 	    	},
 	    },
+
 	    beforeSave : function(){
 	    	
 	    	var tagAndTypes = ( $("#ajaxFormModal #tags").val() != "" ) ? $("#ajaxFormModal #tags").val()+"," : "" ;
 
 	    	if( $("#ajaxFormModal #section").val() )
-	    		tagAndTypes += $("#ajaxFormModal #section").val();
+	    		tagAndTypes += $("#ajaxFormModal #section").val();//+","+tradCategory[$("#ajaxFormModal #section").val()];
 	    	if( $("#ajaxFormModal #type").val() )
-	    		tagAndTypes += ","+$("#ajaxFormModal #type").val();
+	    		tagAndTypes += ","+$("#ajaxFormModal #type").val();//+","+tradCategory[$("#ajaxFormModal #type").val()];
 	    	if( $("#ajaxFormModal #subtype").val() )
-	    		tagAndTypes += ","+$("#ajaxFormModal #subtype").val();
+	    		tagAndTypes += ","+$("#ajaxFormModal #subtype").val();//+","+tradCategory[$("#ajaxFormModal #subtype").val()];
 	    	$("#ajaxFormModal #tags").val( tagAndTypes );
 
 	    	if( typeof $("#ajaxFormModal #description").code === 'function' )  
@@ -155,7 +156,7 @@ dynForm = {
 		            		$( ".subtypeBtn" ).removeClass("active");
 		            		$(this).addClass("active");
 		            		var subtype = ( $(this).hasClass('active') ) ? $(this).data('tag') : "";
-		            		subtype = subtype != "" ? tradCategory[subtype] : "";
+		            		subtype = subtype != "" ? subtype : "";
 		            		$("#ajaxFormModal #subtype").val( subtype );
 		            		$(".nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags").show();
 		            		//$(".subtypeBtn:not(.active)").hide();
