@@ -45,7 +45,7 @@ foreach ($categories["sections"] as $key => $section) { ?>
     </button>
   </div>
 <?php } ?> 
- 
+    
   </div>
 </div>
 <div class="col-xs-12 no-padding"><hr class="no-margin"></div>
@@ -71,7 +71,9 @@ foreach ($categories["sections"] as $key => $section) { ?>
         <?php } ?>
       <?php } ?>
   <?php } ?>
-  
+  <!-- <button onclick="dyFObj.openForm('ressources');" class="col-md-2 col-sm-4 col-xs-6 no-padding letter-vine btn btn-default margin-top-5">
+      <i class="fa fa-plus-circle hidden-xs fa-2x "></i> 
+    </button> -->
 </div>
  
   
