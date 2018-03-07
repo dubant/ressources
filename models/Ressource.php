@@ -121,7 +121,8 @@ class Ressource {
 		if(@$elem["type"])
 	  		$elem = array_merge($elem, Document::retrieveAllImagesUrl($id, self::COLLECTION, $elem["type"], $elem));
 
-	  	return $elem;
+	  	$elem["gallery"] = Document::listMyDocumentByIdAndType(@$id, "ressources");
+		return $elem;
 	}
 
 	public static function getDataBinding() {
