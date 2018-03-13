@@ -89,7 +89,7 @@
 				<span class="letter-azure font-montserrat">
 					<i class="fa fa-angle-down"></i> <i class="fa fa-bullhorn"></i> 
 					<?php echo Yii::t("ressources", @$type." published by");  ?> 
-					<a href="#page.type.<?php echo @$element["parent"]["type"]; ?>.id.<?php echo @$element["parent"]["_id"]; ?>" 
+					<a href="#page.type.<?php echo @$element["parentType"]; ?>.id.<?php echo @$element["parentId"]; ?>" 
 						class="lbh">
 						<?php echo @$element["parent"]["name"]; ?>
 					</a>
