@@ -20,11 +20,15 @@ dynForm = {
 	    		} else
 	    			$(".typeBtntagList, .nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags, #btn-submit-form").hide();
 
+	    		contextDataId = userId;
+	    		contextDataType = "citoyens";
 	    		if(contextData != null && contextData.type && contextData.id )
 	    		{
-    				$('#ajaxFormModal #parentId').val(contextData.id);
-	    			$("#ajaxFormModal #parentType").val( contextData.type ); 
-	    		}	
+    				contextDataId = contextData.id;
+	    			contextDataType = contextData.type;
+	    		} 
+	    		$('#ajaxFormModal #parentId').val(contextDataId);
+	    		$("#ajaxFormModal #parentType").val( contextDataType ); 
 	    	},
 	    },
 
