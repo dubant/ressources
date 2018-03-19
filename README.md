@@ -32,6 +32,9 @@ any  execution in /CO takes the design of the CO theme
 - Get CO menu to show #mainNav
 - show dynform for declaring ressource
 
+
+
+
 ## Ideas, proposals; wishList
 
 ## BUGS, ACTIONS
