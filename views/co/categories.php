@@ -32,8 +32,7 @@
   <div class="col-md-2 col-sm-2 col-xs-2">
     <button class="btn btn-default bg-white col-md-12 col-sm-12 pull-right font-montserrat btn-select-type-anc letter-<?php echo @$section["color"]; ?> padding-10" 
             data-type="classified" data-type-anc=""  data-key="all">
-      <i class="fa fa-refresh"></i>
-      <br><?php echo Yii::t("common","All"); ?>
+      <i class="fa fa-refresh"></i> <?php echo Yii::t("common","All"); ?>
     </button>
   </div>
   <div class="col-md-10 col-sm-10 col-xs-10">
@@ -45,7 +44,7 @@
           <button class="btn btn-default col-md-12 col-sm-12 padding-10 font-montserrat elipsis btn-select-type-anc" 
                 data-type-anc="<?php echo @$section["label"]; ?>" data-key="<?php echo @$section["key"]; ?>" 
                 data-type="ressources">
-          <i class="fa fa-<?php echo $section["icon"]; ?>"></i><br>
+          <i class="fa fa-<?php echo $section["icon"]; ?>"></i> 
           <?php echo Yii::t("category", $section["labelFront"]); ?>
         </button>
       </div>
@@ -55,7 +54,7 @@
                 data-form-type="classifieds"
                 data-type-anc="<?php echo @$section["label"]; ?>" data-key="<?php echo @$section["key"]; ?>" 
                 data-type="ressources">
-          <i class="fa fa-plus-circle hidden-xs"></i><br>
+          <i class="fa fa-plus-circle hidden-xs"></i> 
           <span class="hidden-xs">
             <?php echo Yii::t("classified", "Publier"); ?>
           </span>
