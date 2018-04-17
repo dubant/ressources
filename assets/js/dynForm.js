@@ -1,6 +1,6 @@
 dynForm = {
     jsonSchema : {
-	    title : trad.addressource,
+	    title : trad.addressources,
 	    icon : "cubes",
 	    type : "object",
 	    onLoads : {
@@ -11,29 +11,37 @@ dynForm = {
 	    	onload : function(data){
 	    		$("#ajax-modal .modal-header").removeClass("bg-dark bg-purple bg-red bg-azure bg-green bg-green-poi bg-orange bg-yellow bg-blue bg-turq bg-url")
 							  					  .addClass("bg-azure");
+
 	    		if(data && data.section){
-	    			$(".breadcrumbcustom").html( "<h4><a href='javascript:;'' class='btn btn-xs btn-danger'  onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'><i class='fa fa-times'></i></a> "+data.section+"</h4>");
+	    			$("#ajaxFormModal #id").val(data.id);
+	    			$(".breadcrumbcustom").html( "<h4><a href='javascript:;'' class='btn btn-xs btn-danger'  onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'><i class='fa fa-times'></i></a> "+tradCategory[data.section]+" > "+tradCategory[data.type]+" > "+tradCategory[data.subtype]+"</h4>" );
 					$(".sectionBtntagList").hide();
+					$(".typeBtntagList").hide();
 	    		} else
 	    			$(".typeBtntagList, .nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags, #btn-submit-form").hide();
 
-	    		if(contextData.type && contextData.id )
+	    		contextDataId = userId;
+	    		contextDataType = "citoyens";
+	    		if(contextData != null && contextData.type && contextData.id )
 	    		{
-    				$('#ajaxFormModal #parentId').val(contextData.id);
-	    			$("#ajaxFormModal #parentType").val( contextData.type ); 
-	    		}	
+    				contextDataId = contextData.id;
+	    			contextDataType = contextData.type;
+	    		} 
+	    		$('#ajaxFormModal #parentId').val(contextDataId);
+	    		$("#ajaxFormModal #parentType").val( contextDataType ); 
 	    	},
 	    },
+
 	    beforeSave : function(){
 	    	
 	    	var tagAndTypes = ( $("#ajaxFormModal #tags").val() != "" ) ? $("#ajaxFormModal #tags").val()+"," : "" ;
 
 	    	if( $("#ajaxFormModal #section").val() )
-	    		tagAndTypes += $("#ajaxFormModal #section").val();
+	    		tagAndTypes += $("#ajaxFormModal #section").val();//+","+tradCategory[$("#ajaxFormModal #section").val()];
 	    	if( $("#ajaxFormModal #type").val() )
-	    		tagAndTypes += ","+$("#ajaxFormModal #type").val();
+	    		tagAndTypes += ","+$("#ajaxFormModal #type").val();//+","+tradCategory[$("#ajaxFormModal #type").val()];
 	    	if( $("#ajaxFormModal #subtype").val() )
-	    		tagAndTypes += ","+$("#ajaxFormModal #subtype").val();
+	    		tagAndTypes += ","+$("#ajaxFormModal #subtype").val();//+","+tradCategory[$("#ajaxFormModal #subtype").val()];
 	    	$("#ajaxFormModal #tags").val( tagAndTypes );
 
 	    	if( typeof $("#ajaxFormModal #description").code === 'function' )  
@@ -44,7 +52,7 @@ dynForm = {
 		    }
 	    },
 	    beforeBuild : function(){
-	    	dyFObj.setMongoId('ressource', function(){
+	    	dyFObj.setMongoId('ressources', function(){
 	    		uploadObj.gotoUrl = (contextData != null && contextData.type && contextData.id ) ? "#page.type."+contextData.type+".id."+contextData.id+".view.directory.dir.ressources" : location.hash;
 	    	});
 	    },
@@ -155,7 +163,7 @@ dynForm = {
 		            		$( ".subtypeBtn" ).removeClass("active");
 		            		$(this).addClass("active");
 		            		var subtype = ( $(this).hasClass('active') ) ? $(this).data('tag') : "";
-		            		subtype = subtype != "" ? tradCategory[subtype] : "";
+		            		subtype = subtype != "" ? subtype : "";
 		            		$("#ajaxFormModal #subtype").val( subtype );
 		            		$(".nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags").show();
 		            		//$(".subtypeBtn:not(.active)").hide();

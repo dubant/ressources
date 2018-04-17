@@ -2,7 +2,7 @@
 
 class Ressource {
 	const COLLECTION = "ressources";
-	const CONTROLLER = "ressource";
+	const CONTROLLER = "ressources";
 	const MODULE = "ressources";
 	const TYPE_NEED = "needs";
 	const TYPE_OFFER = "offers";
@@ -121,7 +121,8 @@ class Ressource {
 		if(@$elem["type"])
 	  		$elem = array_merge($elem, Document::retrieveAllImagesUrl($id, self::COLLECTION, $elem["type"], $elem));
 
-	  	return $elem;
+	  	$elem["gallery"] = Document::listMyDocumentByIdAndType(@$id, "ressources");
+		return $elem;
 	}
 
 	public static function getDataBinding() {
