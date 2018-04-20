@@ -51,7 +51,7 @@
     <?php } ?>
       <div class="col-md-4 col-sm-2 col-xs-2 no-padding pull-right">
           <button class="btn btn-default col-md-12 col-sm-12 bg-green-k padding-10 font-montserrat elipsis btn-add-classified btn-open-form" 
-                data-form-type="classifieds"
+                data-form-type="ressources"
                 data-type-anc="<?php echo @$section["label"]; ?>" data-key="<?php echo @$section["key"]; ?>" 
                 data-type="ressources">
           <i class="fa fa-plus-circle hidden-xs"></i> 
@@ -63,7 +63,7 @@
   </div>
    <hr class="col-md-12 col-sm-12 col-xs-12 margin-top-10 margin-bottom-10 no-padding" id="before-section-result">
 </div>
-
+<div class="col-md-10 col-sm-9 col-xs-12 text-left headerSearchContainer no-padding  pull-right"></div>
 
 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-8 margin-top-15 text-right subsub classifiedFilters font-montserrat" id="sub-menu-left">
   <button class="open-type-filter tooltips" data-toggle="tooltip" data-placement="right" data-title="<?php echo Yii::t("common","Open filtering by type") ?>"><i class="fa fa-chevron-right"></i></button>
