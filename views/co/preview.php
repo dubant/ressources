@@ -231,7 +231,6 @@
 
 	var element= <?php echo json_encode($element); ?>;
 	var type = "<?php echo $type; ?>";
-	console.log("thisressource", element);
 	
 	jQuery(document).ready(function() {	
 		var nav = directory.findNextPrev("#page.type."+type+".id."+element['_id']['$id']);
