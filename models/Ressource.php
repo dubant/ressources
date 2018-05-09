@@ -28,7 +28,31 @@ class Ressource {
 	);
 	
 	public static $subCategory = array(
-
+        "charity" => "Charity",
+        "education" => "Education",
+        "househelp" => "Househelp",
+        "washing" => "Washing",
+        "gardening" => "Gardening",
+        "farming" => "Farming",
+        "generalmaintenance" => "General maintenance",
+        "animalcare" => "Animalcare",
+        "childrencare" => "Children care",
+        "ederlycare" => "Ederly care",
+        "disabledcare" => "Disabled care",
+        "hostinghelp" => "Hosting help",
+        "artistic" => "Artistic",
+        "laws" => "Laws",
+        "itdevlopment" => "IT devlopment",
+        "handcraft" => "Handcraft",
+        "agriculture" => "Agriculture",
+        "restauration" => "Restauration",
+        "building" => "Building",
+        "electronic"=> "Electronic",
+        "furniture"=> "Furniture",
+        "primaryressources"=> "Primary ressources",
+        "buildingtools"=> "Building tools",
+        "gardeningtools"=> "Gardening tools",
+        "medicalstuff"=> "Medical stuff",
 	);
 
 	//From Post/Form name to database field name
@@ -120,7 +144,7 @@ class Ressource {
 		  	$elem["typeSig"] = self::COLLECTION;
 		if(@$elem["type"])
 	  		$elem = array_merge($elem, Document::retrieveAllImagesUrl($id, self::COLLECTION, $elem["type"], $elem));
-
+	  	$elem["images"]=Document::getListDocumentsWhere(array("id"=>$id,"type"=>self::COLLECTION,"doctype"=>Document::DOC_TYPE_IMAGE),Document::DOC_TYPE_IMAGE);
 	  	$elem["gallery"] = Document::listMyDocumentByIdAndType(@$id, "ressources");
 		return $elem;
 	}

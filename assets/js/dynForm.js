@@ -17,6 +17,24 @@ dynForm = {
 	    			$(".breadcrumbcustom").html( "<h4><a href='javascript:;'' class='btn btn-xs btn-danger'  onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'><i class='fa fa-times'></i></a> "+tradCategory[data.section]+" > "+tradCategory[data.type]+" > "+tradCategory[data.subtype]+"</h4>" );
 					$(".sectionBtntagList").hide();
 					$(".typeBtntagList").hide();
+					/*if(typeof data.images != "undefined" && data.images.length > 0){
+						imagesArray=[];
+						$.each(data.images,function(e,v){
+							image={
+								"name":"ressource"+e,
+								"uuid":v.id,
+								"thumbnailUrl":v.imageThumbPath
+							};
+							imagesArray.push(image);
+						});
+						$(".fine-uploader-manual-trigger").methods.addInitialFiles(imagesArray);
+					}*/
+					ressourcesTags = $("#ajaxFormModal #tags").val().split(",");
+					$.each([$("#ajaxFormModal #section").val(), $("#ajaxFormModal #type").val(), $("#ajaxFormModal #subtype").val()], function(e,v){
+						index = ressourcesTags.indexOf(v);
+						if (index !== -1) ressourcesTags.splice(index, 1);
+					});
+					$(".tagstags").find(".select2TagsInput").select2("val", ressourcesTags).trigger("change");
 	    		} else
 	    			$(".typeBtntagList, .nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags, #btn-submit-form").hide();
 
@@ -26,7 +44,7 @@ dynForm = {
 	    		{
     				contextDataId = contextData.id;
 	    			contextDataType = contextData.type;
-	    		} 
+	    		}
 	    		$('#ajaxFormModal #parentId').val(contextDataId);
 	    		$("#ajaxFormModal #parentType").val( contextDataType ); 
 	    	},
@@ -36,11 +54,11 @@ dynForm = {
 	    	
 	    	var tagAndTypes = ( $("#ajaxFormModal #tags").val() != "" ) ? $("#ajaxFormModal #tags").val()+"," : "" ;
 
-	    	if( $("#ajaxFormModal #section").val() )
+	    	if( $("#ajaxFormModal #section").val() && tagAndTypes.indexOf($("#ajaxFormModal #section").val()) < 0 )
 	    		tagAndTypes += $("#ajaxFormModal #section").val();//+","+tradCategory[$("#ajaxFormModal #section").val()];
-	    	if( $("#ajaxFormModal #type").val() )
+	    	if( $("#ajaxFormModal #type").val()  && tagAndTypes.indexOf($("#ajaxFormModal #type").val()) < 0 )
 	    		tagAndTypes += ","+$("#ajaxFormModal #type").val();//+","+tradCategory[$("#ajaxFormModal #type").val()];
-	    	if( $("#ajaxFormModal #subtype").val() )
+	    	if( $("#ajaxFormModal #subtype").val()  && tagAndTypes.indexOf($("#ajaxFormModal #subtype").val()) < 0 )
 	    		tagAndTypes += ","+$("#ajaxFormModal #subtype").val();//+","+tradCategory[$("#ajaxFormModal #subtype").val()];
 	    	$("#ajaxFormModal #tags").val( tagAndTypes );
 
@@ -66,9 +84,7 @@ dynForm = {
 	    },
 	    actions : {
 	    	clear : function() {
-	    		
 	    		$("#ajaxFormModal #section, #ajaxFormModal #type, #ajaxFormModal #subtype").val("");
-
 	    		$(".breadcrumbcustom").html( "");
 	    		$(".sectionBtntagList").show(); 
 	    		$(".typeBtntagList").hide(); 
@@ -131,10 +147,9 @@ dynForm = {
                 init : function(){
 	            	$(".typeBtn").off().on("click",function()
 	            	{
-	            		
 	            		$(".typeBtn").removeClass("active btn-dark-blue text-white");
 	            		$( "."+$(this).data('key')+"Btn" ).toggleClass("active btn-dark-blue text-white");
-	            		$("#ajaxFormModal #type").val( ( $(this).hasClass('active') ) ? $(this).data('tag') : "" );
+	            		$("#ajaxFormModal #type").val( ( $(this).hasClass('active') ) ? $(this).data('key') : "" );
 	            		
 	            		$(".breadcrumbcustom").html( 
 	            			"<h4><a href='javascript:;'' class='btn btn-xs btn-danger' "+
@@ -166,8 +181,6 @@ dynForm = {
 		            		subtype = subtype != "" ? subtype : "";
 		            		$("#ajaxFormModal #subtype").val( subtype );
 		            		$(".nametext, .descriptiontextarea, .pricetext, .contactInfotext, .locationlocation, .imageuploader, .formshowerscustom, .tagstags").show();
-		            		//$(".subtypeBtn:not(.active)").hide();
-
 		            		$(".breadcrumbcustom").html( "<h4><a href='javascript:;'' class='btn btn-xs btn-danger' "+
 		            											"onclick='dyFObj.elementObj.dynForm.jsonSchema.actions.clear()'>"+
 		            											"<i class='fa fa-times'></i>"+
