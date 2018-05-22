@@ -80,7 +80,7 @@
                 $lbl2 = (isset($cat2["label"])) ? $cat2["label"] : $cat2 ;
         ?>
           <button class="btn btn-default text-azure margin-bottom-5 margin-left-15 hidden elipsis keycat keycat-<?php echo $key; ?>"
-                  data-categ="<?php echo $key; ?>" data-keycat="<?php echo $lbl2; ?>">
+                  data-categ="<?php echo $key; ?>" data-keycat="<?php echo $key2; ?>">
                   <i class="fa fa-angle-right"></i> <?php echo Yii::t("category",$cat2["label"]); ?>
           </button>
         <?php } ?>
